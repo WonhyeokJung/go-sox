@@ -1,0 +1,66 @@
+stats.mlb.com/api/v1/
+American League ID: 103
+American League Central: 202
+Chicago White Sox: 145
+
+    if team == "Atlanta Braves":
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/XY1SVEZwciGu2O0ChWKv4A_48x48.png'>"
+    if team == 'Miami Marlins':
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/_dSQ2WYAxlh5bk1OEhPc_A_48x48.png'>"
+    if team == 'New York Mets':
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/8VapQG4UqRE64iPYq6W3FQ_48x48.png'>"
+    if team == "Philadelphia Phillies":
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/DmFsZ1exRh9X0ZrTDt0Gaw_48x48.png'>"
+    if team == 'Washington Nationals':
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/jEASG37S2n1Zeq8th2vEiA_48x48.png'>"
+    if team == 'Chicago Cubs':
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/PBmgKhiGoYOGTl1L5FGaiQ_48x48.png'>"
+    if team == "Cincinnati Reds":
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/-XhGI3cGCeuXStm06CF_kw_48x48.png'>"
+    if team == "Milwaukee Brewers":
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/FGq_lQ42AmQDXXJOZ6ZOEA_48x48.png'>"
+    if team == "Pittsburgh Pirates":
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/9QU7ONeilzMGYb2AxTHzqA_48x48.png'>"
+    if team == "St. Louis Cardinals":
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/RM4q4pq8xBXC1OJths6qcQ_48x48.png'>"
+    if team == "Arizona Diamondbacks":
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/7s5ne5Cm_wPo5vBD9p7nRg_48x48.png'>"
+    if team == "Colorado Rockies":
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/Xhoba8Glkl5hAKLPis5WXQ_48x48.png'>"
+    if team == "Los Angeles Dodgers":
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/dgxxs-ybyRdTOEWRZ265AQ_48x48.png'>"
+    if team == "San Diego Padres":
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/asSCH0MODS0uEp8wzwIr9A_48x48.png'>"
+    if team == "San Francisco Giants":
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/Dg6bjCXwfLPYpZhI66005g_48x48.png'>"
+    if team == "Baltimore Orioles":
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/x8OiMUdBYnn-skDBvJX0ZQ_48x48.png'>"
+    if team == "Boston Red Sox":
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/PYjW8IShPc7b-aG2JX5p9w_48x48.png'>"
+    if team == "New York Yankees":
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/SvZBOWebmgQGdzqKGbYRCw_48x48.png'>"
+    if team == "Tampa Bay Rays":
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/_yTxeBZvNAZv5vl8BNjOvA_48x48.png'>"
+    if team == "Toronto Blue Jays":
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/7UyhGCGIKqafCLLaeRe8FA_48x48.png'>"
+    if team == "Chicago White Sox":
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/6qtJV1knLZtEZ8__xseKhA_48x48.png'>"
+    if team == "Cleveland Guardians":
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/eTgxG4yVCUpn1Tt_GUrIpA_48x48.png'>"
+    if team == "Detroit Tigers":
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/7rDj2EZVlcouQNkRgcxCmw_48x48.png'>"
+    if team == "Kansas City Royals":
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/9o_LwIzPvp46JyAcQdr7ow_48x48.png'>"
+    if team == "Minnesota Twins":
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/gBAstfK9v7682fKmomWeMA_48x48.png'>"
+    if team == "Houston Astros":
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/ey32o-rV1MBGbst3pFB_sg_48x48.png'>"
+    if team == "Los Angeles Angels":
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/o3IfXiKyLCntiZZGE8NPFw_48x48.png'>"
+    if team == "Oakland Athletics":
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/AJKr46qzAlyyzvI1sL1CbQ_48x48.png'>"
+    if team == "Seattle Mariners":
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/CcJYNnWBPQcT-lP1fUIf8Q_48x48.png'>"
+    if team == "Texas Rangers":
+        image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/htC4FWpoeXLC_qW-UyoUSA_48x48.png'>"
+    return image
