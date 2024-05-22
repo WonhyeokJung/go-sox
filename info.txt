@@ -2,6 +2,41 @@ stats.mlb.com/api/v1/
 American League ID: 103
 American League Central: 202
 Chicago White Sox: 145
+Today's Game: https://statsapi.mlb.com/api/v1/schedule/games/?sportId=1&date=2024-03-31
+Available Meta: https://statsapi.mlb.com/api/v1/${meta}
+using fields: https://statsapi.mlb.com/api/v1/teams/144/roster/40Man?fields=roster,position,type,person,fullName # because mlb doesn't have the capability to sort.
+coaches : https://statsapi.mlb.com/api/v1/teams/145/coaches
+
+You can also pull the stats for multiple personIds in a single call. Brayan Bello & Richard Bleier season pitching stats as of 6/1/23: https://statsapi.mlb.com/api/v1/people?personIds=678394,542947&hydrate=stats(group=[pitching],type=[byDateRange],startDate=01/01/2023,endDate=06/01/2023,season=2023)
+https://www.reddit.com/r/mlbdata/comments/14htk77/player_and_team_stats_at_a_specific_date/
+meta list = [
+    "awards",
+    "baseballStats",
+    "eventTypes",
+    "gameStatus",
+    "gameTypes",
+    "hitTrajectories",
+    "jobTypes",
+    "languages",
+    "leagueLeaderTypes",
+    "logicalEvents",
+    "metrics",
+    "pitchCodes",
+    "pitchTypes",
+    "platforms",
+    "positions",
+    "reviewReasons",
+    "rosterTypes",
+    "scheduleEventTypes",
+    "situationCodes",
+    "sky",
+    "standingsTypes",
+    "statGroups",
+    "statTypes",
+    "windDirection",
+]
+
+
 
     if team == "Atlanta Braves":
         image = "<img src='https://ssl.gstatic.com/onebox/media/sports/logos/XY1SVEZwciGu2O0ChWKv4A_48x48.png'>"

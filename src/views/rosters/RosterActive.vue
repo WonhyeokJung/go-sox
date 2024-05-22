@@ -1,11 +1,11 @@
 <script setup lang="ts">
-  import RosterList from '@/components/RosterList.vue'
+  import BaseRosterList from '@/components/BaseRosterList.vue'
 </script>
 
 <template>
   <div class="">
     <h1>Active Roster</h1>
-    <RosterList />
+    <BaseRosterList />
   </div>
 </template>
 

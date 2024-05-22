@@ -1,7 +1,26 @@
+@font-face {
+  font-family: 'YEONGJUSeonbiTTF';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2403@1.0/YEONGJUSeonbiTTF.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'WAGURITTF';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2403@1.0/WAGURITTF.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
 :root {
   font-family: 'KingSejongInstitute' ,Menlo, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: normal;  
   font-weight: 400;
 
   /* color-scheme: light dark; */
@@ -26,15 +45,24 @@ a:hover {
   color: #747bff;
 }
 
-body {
-  display: flex;
-  margin: 0;
-  margin-top: 100px;
-  place-items: center;
-  min-width: 320px;
-  /* min-height: 100vh; */
+html, body {
+  max-width: 100%;
+  /* div 밖으로 나가는 text 방지 */
+  word-break: break-word;
+
   /* drag 방지 */
   user-select: none;
+  -webkit-user-select: none;
+}
+
+body {
+  /* display: flex; */
+  margin: 0;
+  margin-top: 100px;
+  /* place-items: center; */
+  text-align: center;
+  min-width: 320px;
+  /* min-height: 100vh; */
 }
 
 h1 {
@@ -71,14 +99,24 @@ button:focus-visible {
   padding: 1rem;
   max-width: 1280px;
   text-align: center;
+  overflow: hidden;
 }
 
 /* ***************** Personal Settings ***************** */
+/* @media (max-width: 568px) {
+  #app {
+    padding: 0;
+    width: 90vw;
+    margin: 0 1rem;
+  }
+} */
+
 .flex-wrapper {
   display: flex;
   position: relative;
   margin: 0 auto;
-  width: 1080px;
+  padding: 0 20px;
+  max-width: 1280px;
   height: 100%;
   flex-wrap: nowrap;
   justify-content: space-between;

@@ -4,7 +4,7 @@ import { $_getLeagueInfo } from '@/api/get'
 import type { LeagueInfo } from '@/types'
 
 export const useLeagueStore = defineStore('league', () => {
-  const leagueInfo: Ref<LeagueInfo> = ref({ copyright: '', divisions: [] })
+  const leagueInfo: Ref<LeagueInfo> = ref({ copyright: '', leagues: [] })
   const getLeagueInfo = computed<LeagueInfo>(() => leagueInfo.value)
 
   async function fetchLeagueData() {
@@ -13,7 +13,6 @@ export const useLeagueStore = defineStore('league', () => {
   }
   
   return {
-    leagueInfo,
     getLeagueInfo,
     fetchLeagueData
   }

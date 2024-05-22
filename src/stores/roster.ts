@@ -2,7 +2,7 @@ import { computed, Ref, ref } from 'vue'
 import { defineStore } from 'pinia'
 import { usePlayerStore as playerStore } from './'
 import { $_getTeamRoster } from '@/api/get'
-import { Roster, DepthChart, RosterType } from '@/types'
+import { DepthChart, RosterType } from '@/types'
 
 export const useRosterStore = defineStore('roster', () => {
   // state
@@ -29,17 +29,19 @@ export const useRosterStore = defineStore('roster', () => {
   // actions
   async function fetchTeamRoster(date:string, rosterType:string) {
     try {
+      // processing과 더불어 이중 중복 호출 방지
+      if (teamRoster.value[rosterType]) return
       const { data } = await $_getTeamRoster(date, rosterType)
       // !! teamRoster = [] 하면 기존 배열 참조 끊어져서 못불러옴 !!
       // if (teamRoster.value[rosterType]) teamRoster.value[rosterType].length = 0;
-      // 중복 호출 방지
-      if (teamRoster.value[rosterType]) return
-      console.log('중복호출중...')
+      // non roster invitees 없을때 돌려보내기
+      if (!data.roster) return
       for (const player of data.roster) {
         await playerStore().fetchPlayer(player.person.link)
+        // Link 통해 개인정보 투입
         player.personalInfo = playerStore().getPlayer.people[0] // 배열에 담겨와서 [0]으로 받는다.
         if (!teamRoster.value[rosterType]) teamRoster.value[rosterType] = [player]
-        teamRoster.value[rosterType].push(player)
+        else teamRoster.value[rosterType].push(player)
       }
     } catch(err) {
       console.error(err)
@@ -50,7 +52,6 @@ export const useRosterStore = defineStore('roster', () => {
     try {
       // 선발투수 목록이 있을 경우 되돌려보냄(데이터 호출 중복 방지)
       if (!teamRoster.value.depthChart || depthChart.value!['S'].length) return
-      console.log('depth chart 나열 함수 중복 호출중..')
       for (const player of teamRoster.value.depthChart) {
         // 필요없음. 이미 fetchTeamRoster에서 해줌.
         // await playerStore().fetchPlayer(player.person.link)

@@ -1,10 +1,11 @@
 <script setup lang="ts">
-  import RosterList from '@/components/RosterList.vue'
+  import BaseRosterList from '@/components/BaseRosterList.vue'
 </script>
 <template>
   <h1>Non-Roster</h1>
+  <p>Non-roster invitees list is not provided during the regular season</p>
   <p>{{ $route.name }}</p>
-  <RosterList />
+  <BaseRosterList />
 </template>
 <style scoped>
   

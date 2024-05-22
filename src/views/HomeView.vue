@@ -1,6 +1,14 @@
 <script setup lang="ts">
-import HelloWorld from '@/components/HelloWorld.vue'
+import TheTeamInfo from '@/components/TheTeamInfo.vue'
+import TheTeamInfoLoading from '@/components/TheTeamInfoLoading.vue';
+
+defineProps(['locale', 'getTranslation'])
 </script>
 <template>
-  <HelloWorld msg="Vite + Vue" />
+  <Suspense>
+    <TheTeamInfo :locale="locale" :getTranslation="getTranslation" />
+    <template #fallback>
+      <TheTeamInfoLoading />
+    </template>
+  </Suspense>
 </template>

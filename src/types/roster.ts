@@ -32,7 +32,7 @@ interface Roster {
   },
   parentTeamId: number,
   // roster.person.link를 통해 가져온 개인 정보를 담을 것이다.
-  personalInfo: PersonalInfo | null,
+  personalInfo: PersonalInfo["people"] | null,
 }
 
 interface DepthChart {

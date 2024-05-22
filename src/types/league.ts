@@ -1,23 +1,49 @@
 interface LeagueInfo {
   readonly copyright: string,
-  divisions: Array<{
+  leagues: Array<{
     id: number,
     name: string,
-    season: string,
-    nameShort: string,
     link: string,
     abbreviation: string,
-    league: {
+    nameShort: string,
+    seasonState: string,
+    hasWildCard: boolean,
+    hasSplitSeason: boolean,
+    numGames: number,
+    hasPlayoffPoints: boolean,
+    numTeams: number,
+    numWildcardTeams: number,
+    seasonDateInfo: {
+      seasonId: string,
+      preSeasonStartDate: string,
+      preSeasonEndDate: string,
+      seasonStartDate: string,
+      springStartDate: string,
+      springEndDate: string,
+      regularSeasonStartDate: string,
+      lastDate1stHalf: string,
+      allStarDate: string,
+      firstDate2ndHalf: string,
+      regularSeasonEndDate: string,
+      postSeasonStartDate: string,
+      postSeasonEndDate: string,
+      seasonEndDate: string,
+      offseasonStartDate: string,
+      offSeasonEndDate: string,
+      seasonLevelGamedayType: string,
+      gameLevelGamedayType: string,
+      qualifierPlateAppearances: number,
+      qualifierOutsPitched: string,
+    },
+    season: string,
+    orgCode: string,
+    conferencesInUse: boolean,
+    divisionsInUse: boolean,
+    sport: {
       id: number,
       link: string
     },
-    sport: {
-      id: string,
-      link: string
-    },
-    hasWildcard: boolean,
     sortOrder: number,
-    numPlayoffTeams: number,
     active: boolean
   }>,
 }
