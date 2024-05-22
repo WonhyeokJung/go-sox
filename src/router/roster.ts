@@ -7,7 +7,7 @@ import RosterNonRoster from '@/views/rosters/RosterNonRoster.vue'
 import { useDate, useProcessing } from '@/composables'
 import { useRosterStore, useLoadingStore } from '@/stores'
 import type { RouteLocationNormalized } from 'vue-router'
-import RosterCoaches from '@/views/rosters/RosterCoaches.vue'
+// import RosterCoaches from '@/views/rosters/RosterCoaches.vue'
 
 const beforeEnter = async (to: RouteLocationNormalized, from: RouteLocationNormalized, next: Function) => {
   let rosterType = ''
