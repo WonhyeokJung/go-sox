@@ -35,15 +35,20 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
+          
       - name: Install dependencies
         run: npm install
+      - name: Build
+        run: npm run build
+        env:
+          VITE_ASSET_PATH: ${{ secrets.VITE_ASSET_PATH }}
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload dist repository
-          path: '${{ github.workspace }}/dist/'
+          path: '/dist/'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
