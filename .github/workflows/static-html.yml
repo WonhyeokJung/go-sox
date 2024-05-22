@@ -35,13 +35,6 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-
-      - name: Generate Environment Variables File for Production
-        # .env.production file에 github secrets로 키 추가
-        run: |
-          echo "VITE_ASSET_PATH=$VITE_ASSET_PATH" >> .env.production
-        env:
-          VITE_ASSET_PATH: ${{ secrets.VITE_ASSET_PATH }}
           
       - name: Install dependencies
         run: npm install
