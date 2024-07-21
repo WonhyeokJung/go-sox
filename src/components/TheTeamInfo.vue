@@ -15,8 +15,7 @@ const { fetchLeagueData } = leagueStore;
 await fetchLeagueData()
 await fetchTeamData(145)
 // fetch가 너무 빨라서 그냥 로딩창 보여주기용 ...
-await new Promise(resolve => setTimeout(resolve, 30000))
-// await new Promise(resolve => setTimeout(resolve, 3000)).then(async () => { await fetchLeagueData(); });
+await new Promise(resolve => setTimeout(resolve, 3000))
 onMounted(async () => {
   // 시즌이 끝났을 때 / 새해로 넘어갈때 날짜 조정용 테스트
   console.log(new Date('2024-11-9') > new Date('2024-11-30'))

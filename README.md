@@ -12,6 +12,8 @@
 
 ```typescript
 /* @/vite.config.ts */
+/* 필수 */
+/* npm install --save-dev @types/node */
 import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig, loadEnv } from 'vite'

@@ -33,6 +33,11 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* colors */
+  --chicago-white-sox-black: #27251f;
+  --chicago-white-sox-silver: #c4ced4;
+  --chicago-white-sox-white: #ffffff;
 }
 
 a {

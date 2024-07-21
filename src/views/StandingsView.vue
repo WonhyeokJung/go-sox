@@ -84,15 +84,17 @@
     <!-- 연도 이동 -->
     <div class="standings-year__dropdown">
       <span class="standings-year__dropdown-el">
-        <button class="last-year__button" @click="fetchLastYear(), $router.push({ name: 'standings', query: { league: $route.query.league }, params: { season: year } })">이전</button>
-        {{ year }}
-        <button class="year-list__toggle-button" @click="(e) => toggleYearList(e)">보-탄</button>
+        <button class="last-year__button" @click="fetchLastYear(), $router.push({ name: 'standings', query: { league: $route.query.league }, params: { season: year } })">◀</button>
+        <span class="standing-year__year-select">
+          <span class="standings-year__year-text">{{ year }}</span>
+          <button class="year-list__toggle-button" @click="(e) => toggleYearList(e)">▼</button>
+        </span>
         <ul class="year-list">
-          <li v-for="(n, index) in (date.year - 1875)" :key="index" @click="changeYear(date.year - (n-1)), $router.push({ name: 'standings', query: { league: $route.query.league }, params: { season: year } })">
+          <li class="year" v-for="(n, index) in (date.year - 1875)" :key="index" @click="changeYear(date.year - (n-1)), $router.push({ name: 'standings', query: { league: $route.query.league }, params: { season: year } })">
             {{ date.year - (n-1) }}
           </li>
         </ul>
-        <button class="next-year__button" @click="fetchNextYear(), $router.push({ name: 'standings', query: { league: $route.query.league }, params: { season: year } })">다음</button>
+        <button class="next-year__button" @click="fetchNextYear(), $router.push({ name: 'standings', query: { league: $route.query.league }, params: { season: year } })">▶</button>
       </span>
     </div>
     <!-- 리그 선택 -->
@@ -111,19 +113,19 @@
         <div v-if="($route.query.league == 'AL' || !$route.query.league)">
           <TheStandingsTable :standings="getStandings[103][0].teamRecords">
             <template #division>
-              <div>{{ getTranslation(locale, 'ae') }}</div>
+              <div class="division">{{ getTranslation(locale, 'ae') }}</div>
             </template>
           </TheStandingsTable>
       
           <TheStandingsTable :standings="getStandings[103][1].teamRecords">
             <template #division>
-              <div>{{ getTranslation(locale, 'ac') }}</div>
+              <div class="division">{{ getTranslation(locale, 'ac') }}</div>
             </template>
           </TheStandingsTable>
       
           <TheStandingsTable :standings="getStandings[103][2].teamRecords">
             <template #division>
-              <div>{{ getTranslation(locale, 'aw') }}</div>
+              <div class="division">{{ getTranslation(locale, 'aw') }}</div>
             </template>
           </TheStandingsTable>
         </div>
@@ -131,19 +133,19 @@
         <div v-if="$route.query.league == 'NL'">
           <TheStandingsTable :standings="getStandings[104][0].teamRecords">
             <template #division>
-              <div>{{ getTranslation(locale, 'ne') }}</div>
+              <div class="division">{{ getTranslation(locale, 'ne') }}</div>
             </template>
           </TheStandingsTable>
       
           <TheStandingsTable :standings="getStandings[104][1].teamRecords">
             <template #division>
-              <div>{{ getTranslation(locale, 'nc') }}</div>
+              <div class="division">{{ getTranslation(locale, 'nc') }}</div>
             </template>
           </TheStandingsTable>
       
           <TheStandingsTable :standings="getStandings[104][2].teamRecords">
             <template #division>
-              <div>{{ getTranslation(locale, 'nw') }}</div>
+              <div class="division">{{ getTranslation(locale, 'nw') }}</div>
             </template>
           </TheStandingsTable>
         </div>
@@ -153,13 +155,13 @@
         <div v-if="($route.query.league == 'AL' || !$route.query.league)">
           <TheStandingsTable :standings="getStandings[103][0].teamRecords">
             <template #division>
-              <div>{{ getTranslation(locale, 'ae') }}</div>
+              <div class="division">{{ getTranslation(locale, 'ae') }}</div>
             </template>
           </TheStandingsTable>
       
           <TheStandingsTable :standings="getStandings[103][1].teamRecords">
             <template #division>
-              <div>{{ getTranslation(locale, 'aw') }}</div>
+              <div class="division">{{ getTranslation(locale, 'aw') }}</div>
             </template>
           </TheStandingsTable>
         </div>
@@ -167,13 +169,13 @@
         <div v-if="$route.query.league == 'NL'">
           <TheStandingsTable :standings="getStandings[104][0].teamRecords">
             <template #division>
-              <div>{{ getTranslation(locale, 'ne') }}</div>
+              <div class="division">{{ getTranslation(locale, 'ne') }}</div>
             </template>
           </TheStandingsTable>
       
           <TheStandingsTable :standings="getStandings[104][1].teamRecords">
             <template #division>
-              <div>{{ getTranslation(locale, 'nw') }}</div>
+              <div class="division">{{ getTranslation(locale, 'nw') }}</div>
             </template>
           </TheStandingsTable>
         </div>  
@@ -183,7 +185,7 @@
         <div v-if="($route.query.league == 'AL' || !$route.query.league)">
           <TheStandingsTable :standings="getStandings[103][0].teamRecords">
             <template #division>
-              <div>{{ getTranslation(locale, 'al') }}</div>
+              <div class="division">{{ getTranslation(locale, 'al') }}</div>
             </template>
           </TheStandingsTable>
         </div>
@@ -191,7 +193,7 @@
         <div v-if="$route.query.league == 'NL'">
           <TheStandingsTable :standings="getStandings[104][0].teamRecords">
             <template #division>
-              <div>{{ getTranslation(locale, 'nl') }}</div>
+              <div class="division">{{ getTranslation(locale, 'nl') }}</div>
             </template>
           </TheStandingsTable>
         </div>
@@ -204,7 +206,7 @@
         <div v-if="$route.query.league == 'NL' && getStandings[104] && getStandings[104][0]">
           <TheStandingsTable :standings="getStandings[104][0].teamRecords">
             <template #division>
-              <div>{{ getTranslation(locale, 'nl') }}</div>
+              <div class="division">{{ getTranslation(locale, 'nl') }}</div>
             </template>
           </TheStandingsTable>
         </div>
@@ -217,6 +219,7 @@
 .standings-year__dropdown {
   display: flex;
   position: relative;
+  height: 50px;
 }
 
 .standings-year__dropdown-el {
@@ -224,30 +227,130 @@
   margin: 0 auto;
 }
 
+/* 연도 텍스트 및 토글 버튼 span */
+.standing-year__year-select {
+  margin-inline: 0.5rem;
+  border: 1px solid #C4CED4;
+  border-radius: 5px;
+  padding: 0.2rem 0.5rem;
+}
+
+.standings-year__year-text {
+  display: inline-block;
+  padding-block: 17px;
+  height: 50px;
+  /* 세로 가운데 정렬 위해 */
+  /* 글자 크기 16px + padding 17*2=34 = height 50 / line-height 17px */
+  font-size: 16px;
+  line-height: 17px;
+  font-weight: bold;
+}
+
 .standings-year__dropdown-el .year-list {
   display: none;
   position: absolute;
   margin: 0;
+  border: 1px solid #f1f1f1;
+  border-radius: 5px;
   padding: 0;
-  width: 100px;
+  width: 80px;
   height: 300px;
-  top: 42px;
-  left: calc(50% - 50px);
+  top: 36px;
+  /* 50% - width/2 */
+  left: calc(50% - 40px);
   list-style: none;
   overflow-y: scroll;
   z-index: 2;
+  background-color: white;
   /* scrollbar-width: none; */
 }
 
-.standings-league__select {
-  font-size: 1.2rem;
+/* scroll bar custom */
+/* width */
+.standings-year__dropdown-el .year-list::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+.standings-year__dropdown-el .year-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.standings-year__dropdown-el .year-list::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background: #888;
+  /* background 범위 설정, border 줘서 크기 줄어보이게 하기 */
+  background-clip: content-box;
+}
+
+/* Handle on hover */
+.standings-year__dropdown-el .year-list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  background-clip: content-box;
+}
+
+/* year list */
+.standings-year__dropdown-el .year-list .year {
+  padding-block: 5px;
   cursor: pointer;
 }
+
+.standings-year__dropdown-el .year-list .year:hover {
+  /* white sox color */
+  color: #27251F;
+  background-color: #C4CED4;
+}
+
+/* 연도 리스트 toggle 버튼 */
+.year-list__toggle-button {
+  margin-left: 4px;
+  border: none;
+  padding: 0;
+  height: 100%;
+  font-size: 12px;
+  background-color: transparent;
+}
+
+.last-year__button,
+.next-year__button {
+  border: none;
+  margin-inline: 0.5rem;
+  padding: 0;
+  height: 100%;
+  font-size: 12px;
+  background-color: transparent;
+}
+
+/* 버튼 클릭시 아웃라인 생기는거 방지 */
+.last-year__button:focus,
+.next-year__button:focus,
+.year-list__toggle-button:focus {
+  outline: none;
+  /* 모바일용 아웃라인 방지 */
+  -webkit-tap-highlight-color: transparent;
+  /* cursor: default; */
+}
+
+.standings-league__select {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.standings-league__select .national, .standings-league__select .american {
+  font-weight: bolder;
+}
+
 .standings-league__select .national:hover, .standings-league__select .american:hover {
   color: white;
-  font-weight: bold;
   /* 상우하좌에 각각 그림자 적용/블러효과 x */
   /* offset-x | y | color */
   text-shadow: 0 -1px black, 1px 0 black, 0 1px black, -1px 0 black;
+  cursor: pointer;
+}
+
+.standings-container .division {
+  font-weight: bold;
 }
 </style>

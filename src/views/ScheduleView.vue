@@ -31,10 +31,10 @@
         </div>
 
         <div class="description">
-          <div class="status" style="text-transform: uppercase;">{{ getTranslation(locale, el.status.detailedState) }}</div>
+          <div class="status">{{ getTranslation(locale, el.status.detailedState) }}</div>
           <div class="detail" v-if="el.status.detailedState === 'Postponed'">{{ el.status.reason }}</div>
-          <div class="venue">{{ el.venue.name }}</div>
           <div class="score">{{ el.teams.away.score }} - {{ el.teams.home.score }}</div>
+          <div class="venue">{{ el.venue.name }}</div>
         </div>
 
         <div class="home">
@@ -252,6 +252,10 @@
     display: none;
   }
 
+  .schedule__game-info .description .status {
+    text-transform: uppercase;
+  }
+
   .box-score .official {
     font-size: 0.7rem;
   }
@@ -342,6 +346,15 @@
       display: block;
     }
 
+    .schedule__game-info .description {
+      width: 100px;
+    }
+
+    /* first 3 elems */
+    .schedule__game-info .description:nth-child(-n+3) {
+      font-size: 12px;
+    }
+
     .line-score-wrapper {
       margin: 0 auto;
       max-width: 80%;
@@ -366,7 +379,7 @@
     .line-score-table .runs {
       position: sticky;
       right: 0;
-      background-color: white;
+      background-color: var(--chicago-white-sox-white);
     }
 
     .box-score-table-container {

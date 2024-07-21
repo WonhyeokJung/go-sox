@@ -67,7 +67,7 @@
   } */
   .standings-table-container {
     position: relative;
-    margin: 0 auto;
+    margin: 0 auto 2rem auto;
     /* max-width: calc(1080px - 150px); */
     max-width: 1080px;
   }
@@ -89,7 +89,7 @@
 
   .standings-table {
     margin: 0 auto;
-    width: 100%;
+    /* width: 100%; */
     /* max-width: 1080px; */
     border-collapse: collapse;
     /* border-spacing: 5px; */
@@ -114,7 +114,7 @@
   .standings-table tbody th {
     /* left, right, bottom, top중 하나 필수임 */
     position: sticky;
-    width: 150px;
+    width: 200px;
     left: 0;
     background-color: white;
   }

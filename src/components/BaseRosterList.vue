@@ -68,7 +68,7 @@
       <tbody>
         <tr v-for="(player, index) in getTeamRoster[rosterType as string]" :key="index">
           <!-- <td>{{ index + 1 }}</td> -->
-          <td><a href="#">{{ player.person.fullName }}</a> <span>{{ player.jerseyNumber }}</span> <span class="player-status">{{ status[player.status.code] }}</span></td>
+          <td class="name"><a href="#">{{ player.person.fullName }}</a> <span>{{ player.jerseyNumber }}</span> <span class="player-status">{{ status[player.status.code] }}</span></td>
           <td v-if="env == 'development'">{{ player.person.id }}</td>
           <td>{{ player.personalInfo?.birthCountry }}</td>
           <td>{{ player.personalInfo?.height }}</td>
@@ -101,6 +101,10 @@
     .roster-table .nationality, .roster-table .height, .roster-table .weight, .roster-table .bat-throw {
       display: none;
     }
+  }
+
+  .roster-table .name {
+    text-align: center;
   }
 
   .player-status {
